@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,6 +21,7 @@ export default function RootLayout({
         <html lang="en">
             <body className={cn(inter.className, "bg-zinc-50")}>
                 {children}
+                <Footer />
             </body>
         </html>
     );
