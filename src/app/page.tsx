@@ -33,7 +33,7 @@ export default function Home() {
                 </a>
             </h1>
 
-            <div className="space-y-2 pb-10">
+            {/* <div className="space-y-2 pb-10">
                 <div className="flex items-center space-x-1 font-semibold text-xl">
                     <h3>MCQ Settings</h3> <Settings2 />
                 </div>
@@ -51,7 +51,7 @@ export default function Home() {
                         <p className="text-md">Auto-grade</p>
                     </ToggleGroupItem>
                 </ToggleGroup>
-            </div>
+            </div> */}
 
             <div className="space-y-4">
                 {/* {MCQ_QUESTIONS.slice(0, 5).map((item, index) => ( */}
