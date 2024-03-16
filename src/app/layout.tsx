@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Footer from "@/components/Footer";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +23,7 @@ export default function RootLayout({
             <body className={cn(inter.className, "bg-zinc-50")}>
                 {children}
                 <Footer />
+                <GoogleAnalytics gaId="G-7G7TMR3DPC" />
             </body>
         </html>
     );
