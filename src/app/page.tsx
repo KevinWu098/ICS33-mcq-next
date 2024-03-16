@@ -101,7 +101,10 @@ export default function Home() {
                 {shuffledQuestions.map((item, index) => (
                     <div className="space-y-2" key={item.question}>
                         <h6 className="text-lg font-bold">
-                            {index + 1}. {item.question}
+                            {index + 1}.{" "}
+                            {item.question.split("\n").map((line) => (
+                                <p key={line}>{line}</p>
+                            ))}
                         </h6>
                         <div>
                             <ToggleGroup
@@ -124,11 +127,16 @@ export default function Home() {
                                         >
                                             <ToggleGroupItem
                                                 value={answer}
-                                                aria-label={answer}
-                                                className="text-left data-[state=on]:text-primary data-[state=on]:drop-shadow-sm"
+                                                className="text-left data-[state=on]:text-primary data-[state=on]:drop-shadow-sm min-h-10 h-full"
                                             >
                                                 <p className="text-md">
-                                                    {answer}
+                                                    {answer
+                                                        .split("\n")
+                                                        .map((line) => (
+                                                            <p key={line}>
+                                                                {line}
+                                                            </p>
+                                                        ))}
                                                 </p>
                                             </ToggleGroupItem>
                                             {selected[index] == answer ? (
