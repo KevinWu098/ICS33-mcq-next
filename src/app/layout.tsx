@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
     title: "ICS 33 MCQ",
     description:
-        "Minimalistic ICS 33 MCQ Questions. Full credit and recognition goes to Bo, for providing this fantastic resource.",
+        "Minimalistic ICS 33 MCQ Questions. Full credit and recognition goes to Bo, for providing the questions enabling this website.",
 };
 
 export default function RootLayout({
