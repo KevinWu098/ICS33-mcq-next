@@ -129,7 +129,7 @@ export default function Home() {
                                                 value={answer}
                                                 className="text-left data-[state=on]:text-primary data-[state=on]:drop-shadow-sm min-h-10 h-full"
                                             >
-                                                <p className="text-md">
+                                                <p className="text-md leading-loose">
                                                     {answer
                                                         .split("\n")
                                                         .map((line) => (
