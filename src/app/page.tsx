@@ -3,15 +3,15 @@
 import MCQ_QUESTIONS from "../../data/python_mcq.json";
 import {
     Check,
-    Loader2,
-    Settings2,
-    SquareArrowOutUpRight,
+    // Loader2,
+    // Settings2,
+    // SquareArrowOutUpRight,
     X,
 } from "lucide-react";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { cn } from "@/lib/utils";
-import { Suspense, useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
+// import { Button } from "@/components/ui/button";
 
 type Question = {
     question: string;
@@ -96,63 +96,59 @@ export default function Home() {
                 </Button>
             </div> */}
 
-            <Suspense fallback={<Loader2 className="animate-spin" />}>
-                <div className="space-y-4">
-                    {/* {MCQ_QUESTIONS.slice(0, 5).map((item, index) => ( */}
-                    {shuffledQuestions.map((item, index) => (
-                        <div className="space-y-2" key={item.question}>
-                            <h6 className="text-lg font-bold">
-                                {index + 1}. {item.question}
-                            </h6>
-                            <div>
-                                <ToggleGroup
-                                    variant="outline"
-                                    type="single"
-                                    className="flex flex-col text-left items-start"
-                                    onValueChange={(value) => {
-                                        setSelected((prevSelected) => {
-                                            const newSelected = [
-                                                ...prevSelected,
-                                            ];
-                                            newSelected[index] = value;
-                                            return newSelected;
-                                        });
-                                    }}
-                                >
-                                    {item.answers.map((answer) => {
-                                        return (
-                                            <div
-                                                className="flex items-center space-x-4"
-                                                key={answer}
+            <div className="space-y-4">
+                {/* {MCQ_QUESTIONS.slice(0, 5).map((item, index) => ( */}
+                {shuffledQuestions.map((item, index) => (
+                    <div className="space-y-2" key={item.question}>
+                        <h6 className="text-lg font-bold">
+                            {index + 1}. {item.question}
+                        </h6>
+                        <div>
+                            <ToggleGroup
+                                variant="outline"
+                                type="single"
+                                className="flex flex-col text-left items-start"
+                                onValueChange={(value) => {
+                                    setSelected((prevSelected) => {
+                                        const newSelected = [...prevSelected];
+                                        newSelected[index] = value;
+                                        return newSelected;
+                                    });
+                                }}
+                            >
+                                {item.answers.map((answer) => {
+                                    return (
+                                        <div
+                                            className="flex items-center space-x-4"
+                                            key={answer}
+                                        >
+                                            <ToggleGroupItem
+                                                value={answer}
+                                                aria-label={answer}
+                                                className="text-left data-[state=on]:text-primary data-[state=on]:drop-shadow-sm"
                                             >
-                                                <ToggleGroupItem
-                                                    value={answer}
-                                                    aria-label={answer}
-                                                    className="text-left data-[state=on]:text-primary data-[state=on]:drop-shadow-sm"
-                                                >
-                                                    <p className="text-md">
-                                                        {answer}
-                                                    </p>
-                                                </ToggleGroupItem>
-                                                {selected[index] == answer ? (
-                                                    <p className={cn()}>
-                                                        {answer ==
-                                                        item.correctAnswer ? (
-                                                            <Check className="text-green-500 w-5 h-5" />
-                                                        ) : (
-                                                            <X className="text-red-500 w-5 h-5" />
-                                                        )}
-                                                    </p>
-                                                ) : null}
-                                            </div>
-                                        );
-                                    })}
-                                </ToggleGroup>
-                            </div>
+                                                <p className="text-md">
+                                                    {answer}
+                                                </p>
+                                            </ToggleGroupItem>
+                                            {selected[index] == answer ? (
+                                                <p className={cn()}>
+                                                    {answer ==
+                                                    item.correctAnswer ? (
+                                                        <Check className="text-green-500 w-5 h-5" />
+                                                    ) : (
+                                                        <X className="text-red-500 w-5 h-5" />
+                                                    )}
+                                                </p>
+                                            ) : null}
+                                        </div>
+                                    );
+                                })}
+                            </ToggleGroup>
                         </div>
-                    ))}
-                </div>
-            </Suspense>
+                    </div>
+                ))}
+            </div>
         </main>
     );
 }
