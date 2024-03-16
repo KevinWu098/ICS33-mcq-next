@@ -21,17 +21,25 @@ export default function Home() {
         <main className="flex flex-col wrapper my-12">
             <h1 className="text-4xl font-bold flex items-center pb-6">
                 <p className="text-4xl  text-primary">ICS 33&nbsp;</p>
-                <p>MCQ -&nbsp;</p>
-                <a
-                    href="https://lucent-puppy-4aef4d.netlify.app/"
-                    target="_blank"
-                    referrerPolicy="no-referrer"
-                    className="flex-center space-x-1 text-xl underline"
-                >
-                    <p>See Original Here</p>
-                    <SquareArrowOutUpRight className="stroke-[2.5]" />
-                </a>
+                <p>MCQ</p>
             </h1>
+
+            <div className="mb-6">
+                <h2 className="text-xl font-bold">About</h2>
+                <p>
+                    This website is simply a minimalist reskin of{" "}
+                    <a
+                        href="https://lucent-puppy-4aef4d.netlify.app/"
+                        target="_blank"
+                        referrerPolicy="no-referrer"
+                        className="underline"
+                    >
+                        {"Bo's"} ICS 33 MCQ questions and related web app
+                    </a>
+                    , made for personal use. Full credits to Bo for his
+                    fantastic work.
+                </p>
+            </div>
 
             {/* <div className="space-y-2 pb-10">
                 <div className="flex items-center space-x-1 font-semibold text-xl">
